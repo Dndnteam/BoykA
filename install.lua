@@ -66,7 +66,7 @@ end
 os.execute('lua install.lua')
 end 
 end
-if not database:get(Server_Done.."User_Write") then
+if database:get(Server_Done.."User_Write") then
 print('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
 local User = io.read():gsub('@','') 
 if User ~= '' then
