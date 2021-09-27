@@ -26,8 +26,6 @@ end
 if not database:get(Server_Done.."Token_Write") then
 print('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27')
 local token = io.read()
-if token ~= '' then
-data,res = https.request("https://boyka-api.ml/index.php?p=BOYKA-DeV")
 if res == 200 then
 tr = json:decode(data)
 if tr.Info.info == 'Is_Spam' then
@@ -90,7 +88,7 @@ RunBot:write([[
 cd $HOME/Dndn
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr Dndn.lua
-wget "https://raw.githubusercontent.com/BOYKA-DeV/BoykA/main/BoykA.lua"
+wget "https://raw.githubusercontent.com/Dndnteam/Dndn/BoykA/Dndn.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./Dndn.lua -p PROFILE --bot=$token
