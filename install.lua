@@ -90,7 +90,7 @@ RunBot:write([[
 cd $HOME/Dndn
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr Dndn.lua
-wget "https://raw.githubusercontent.com/BOYKA-DeV/BoykA/main/BoykA.lua"
+wget "https://raw.githubusercontent.com/Dndnteam/Dndn/BoykA/Dndn.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./Dndn.lua -p PROFILE --bot=$token
