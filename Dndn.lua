@@ -2629,20 +2629,15 @@ end
 end
 end,nil)   
 end
-if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-local url,res = https.request('https://boyka-api.ml/ChatMember.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.info ~= true then
-send(msg.chat_id_,msg.id_,'✫: شترك في قناة السورس اولآ @DnDnTeam .')   
-return false 
-end
-Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ᴅɴᴅɴ ᴛᴇᴀᴍ\n\n[-  ᴅɴᴅɴ ᴛᴇᴀᴍ ᴄʜᴀɴɴᴇʟ  .](http://t.me/DnDnTeam)\n\n[-  ɪɴғᴏ sᴏᴜʀᴄᴇ .](http://t.me/DnDnTeam)\n\n[-  ᴅɴᴅɴ ᴛᴇᴀᴍ ᴅᴇᴠᴇʟᴏᴘᴇʀ  .](http://t.me/X_MGL_X)\n\n[-  ʙᴏᴛ ᴅɴᴅɴ ᴛᴇᴀᴍ .](http://t.me/rriebot)"
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
+Text = "𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝘿𝙣𝙙𝙣 𝙎𝙤𝙪𝙧𝙘𝙚"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '✫: ᴅɴᴅɴ ᴛᴇᴀᴍ sᴏᴜʀᴄʀ .',url="t.me/DnDnTeam/567"}},
+{{text = '<𝖲𝗈𝗎𝖱𝖼𝖤💞𝖣𝗇𝖽𝗇> .',url="https://t.me/Dndnteam"}},{{text = '𝑫𝒆𝒗 𝑺𝒂𝒅𝒊𝒒 .',url="https://t.me/X_MGL_X"},,{{text = '𝗗𝗻𝗱𝗻 𝗖𝗵𝗮𝗻𝗻𝗹 .',url="https://t.me/DndnTeam"}},{{text = '𝗗𝗻𝗱𝗻 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 .',url="https://t.me/X_MGL_X"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/DnDnTeam&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/DndnTeam&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
 end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
