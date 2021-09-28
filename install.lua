@@ -39,26 +39,13 @@ io.write('\27[0;35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم ي
 end 
 os.execute('lua install.lua')
 end
-if not database:get(Server_Done.."UserSudo_Write") then
-print('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27[0;33;49m')
-local Id = io.read():gsub(' ','') 
-if tostring(Id):match('%d+') then
-data,res = https.request("https://boyka-api.ml/index.php?bn=info&id="..Id)
-if res == 200 then
-muaed = json:decode(data)
-if muaed.Info.info == 'Is_Spam' then
-io.write('\n\27[1;35m عذرا الايدي محظور من السورس \n\27[0;39;49m') 
-os.execute('lua start.lua')
-end 
-if muaed.Info.info == 'Ok' then
-io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n27[0;39;49m')
+if not database:get(Server_Done.."UserSudo_Write")
+then io.write('\27[1;35m\nالان ارسل ايدي المطور الاساسي ↫ ⤈\n\27[0;33;49m')
+local Id = io.read():gsub(' ','') if tostring(Id):match('%d+')
+then io.write('\27[1;36mتم حفظ ايدي المطور الاساسي\n27[0;39;49m')
 database:set(Server_Done.."UserSudo_Write",Id)
-end 
-else
-io.write('\27[0;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
+else print('\27[1;31m┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\nلم يتم حفظ ايدي المطور الاساسي ارسله مره اخرى\n┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉')
 end
-os.execute('lua install.lua')
-end 
 end
 if not database:get(Server_Done.."User_Write") then
 print('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
