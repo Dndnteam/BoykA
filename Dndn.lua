@@ -2633,7 +2633,7 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 Text = "𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝘿𝙣𝙙𝙣 𝙎𝙤𝙪𝙧𝙘𝙚"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '<𝖲𝗈𝗎𝖱𝖼𝖤💞𝖣𝗇𝖽𝗇> .',url="https://t.me/Dndnteam"}},{{text = '𝑫𝒆𝒗 𝑺𝒂𝒅𝒊𝒒 .',url="https://t.me/X_MGL_X"},,{{text = '𝗗𝗻𝗱𝗻 𝗖𝗵𝗮𝗻𝗻𝗹 .',url="https://t.me/DndnTeam"}},{{text = '𝗗𝗻𝗱𝗻 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 .',url="https://t.me/X_MGL_X"}},
+{{text = '<𝖲𝗈𝗎𝖱𝖼𝖤💞𝖣𝗇𝖽𝗇> .',url="https://t.me/Dndnteam"}},{{text = '𝑫𝒆𝒗 𝑺𝒂𝒅𝒊𝒒 .',url="https://t.me/X_MGL_X"},{{text = '𝗗𝗻𝗱𝗻 𝗖𝗵𝗮𝗻𝗻𝗹 .',url="https://t.me/DndnTeam"}},{{text = '𝗗𝗻𝗱𝗻 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 .',url="https://t.me/X_MGL_X"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/DndnTeam&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
